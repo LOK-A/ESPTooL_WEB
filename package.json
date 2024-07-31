@@ -1,0 +1,32 @@
+{
+  "name": "typescript-example",
+  "version": "1.0.0",
+  "devDependencies": {
+    "elix": "^15.0.1",
+    "esptool-js": "^0.4.5",
+    "parcel": "^2.8.3",
+    "parcel-resolver-ignore": "^2.1.5",
+    "rimraf": "^4.1.2",
+    "ts-loader": "^9.4.2",
+    "tslib": "^2.6.3",
+    "typescript": "^5.0.2",
+    "web-serial-polyfill": "^1.0.15",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1"
+  },
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "genDocs": "rimraf docs && typedoc && mkdir dist && copy docs dist",
+    "dev": "npm run clean && npm run genDocs && parcel index.html",
+    "build2": "npm run clean && parcel build index.html --no-optimize --public-url",
+    "clean": "rimraf dist .parcel-cache"
+  },
+  "description": "This repository shows how a TypeScript project can consume any web component, including any web component from the [Elix](https://component.kitchen/Elix) library.",
+  "main": "webpack.config.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typedoc": "^0.26.5"
+  }
+}
